@@ -1,0 +1,42 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+  function sendData(){
+   $.ajax({ type: "POST",
+    url: '/',
+    data: {
+       video1: $("#video1").value(),
+       video2: $("#video2").value()
+    },
+    success: function(data){},
+  });
+  return false; // old school
+
+  }
+
+
+
+
+</script>
+<!-- no time to configure webpack, oops. should have used a different starter -->
+<!-- jquery, :/ -->
+
+<h1>ACME Video Merger</h1>
+
+<form method='post'>
+<p>
+<label for="video1">Video 1:</label>
+<input type="text" id="video1">
+</p>
+
+<p>
+<label for="video2">Video 2:</label>
+<input type="text" id="video2">
+</p>
+
+<p>
+<button onClick='sendData();'>Abra Cadabra (Merge Videos)</button>
+</p>
+</form>
